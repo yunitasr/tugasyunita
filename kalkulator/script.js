@@ -70,16 +70,13 @@ let finalAnswer = 0;
 
                 }
                 break;
-
         }
-
     })
 })
 
 
 
 function clearDisplay() {
-
     ui.textContent = "";
     finalCalc.textContent = ""
     valOne = [];
@@ -88,14 +85,12 @@ function clearDisplay() {
 }
 
 function removeNumber(e) {
-
     valOne.pop();
     ui.textContent = valOne.join("");
 }
 
 
 function makeNegative() {
-
     if (valOne.length < 1) {
         return false;
     }else if(valOne[0] == "-") {
@@ -103,39 +98,29 @@ function makeNegative() {
 
     } else {
         valOne.unshift("-")
-
     }
     ui.textContent = valOne.join("");
 }
 
 function makeCalculation() {
-
     if (valTwo.length > 0 && operator.length!==0) {
-        //finalAnswer = valTwo.concat(operator, valOne).join("");
         finalAnswer = eval(valTwo + operator + valOne.join(""));
         finalCalc.textContent = "";
         finalCalc.textContent = eval(finalAnswer).toFixed(2);
         ui.textContent = "";
         valTwo = eval(finalAnswer);
         valOne = [];
-        //operator = [];
-
     } else if (operator.length == 0) {
-
-        alert("invalid calculation there is no operator");
-        
+        alert("invalid calculation there is no operator");        
     }
 
     else {
-        //finalAnswer = valTwo.concat(operator, valOne).join
         finalAnswer = finalAnswer = eval(valTwo + operator + valOne.join(""));
-
         console.log("final answer");
         console.log(finalAnswer);
         finalCalc.textContent = "";
         ui.textContent = "";
         finalCalc.textContent = eval(finalAnswer).toFixed(2);
-        //operator = [];
         valTwo = eval(finalAnswer);
         valOne = [];
     }   
